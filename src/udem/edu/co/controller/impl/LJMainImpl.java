@@ -43,37 +43,39 @@ public class LJMainImpl implements LJMain {
                     verHeroesPorClasificacion("Heroe con Curación acelerada");
                     break;
                 case 8:
-                    LJMenuImpl.verMensaje("Adios :)");
+                    ljMenuImpl.mostrarMensaje("Adios :)");
                     break;
                 default:
-                    LJMenuImpl.verMensaje("OEEEE Coloque bien lo que le piden maninnn Mch");
+                    ljMenuImpl.mostrarMensaje("OEEEE Coloque bien lo que le piden maninnn Mch");
             }
         } while (choice != 8);
     }
 
     private void verTodosHeroes() {
-        LJMenuImpl.verHeroes(heroes);
+        ljMenuImpl.mostrarHeroes(heroes);
     }
 
     private void verHeroesPorClasificacion(String clasificacion) {
         List<SuperHeroImpl> heroesFiltrados = new ArrayList<>();
         for (SuperHeroImpl superHeroImpl : heroes) {
             if (superHeroImpl.getClasificaciones().contains(clasificacion)) {
-                if (clasificacion.equals("Heroe volador")) {
-                    heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
-                } else if (clasificacion.equals("Heroe con Resistencia aumentada")) {
-                    heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
-                } else if (clasificacion.equals("Heroe con Habilidades de combate avanzadas")) {
-                    heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
-                } else if (clasificacion.equals("Heroe con Velocidad sobrehumana")) {
-                    heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
-                } else if (clasificacion.equals("Heroe con Curación acelerada")) {
-                        heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
-                } else {
-                    heroesFiltrados.add(superHeroImpl );
+                switch (clasificacion) {
+                    case "Heroe volador" ->
+                            heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
+                    case "Heroe con Resistencia aumentada" ->
+                            heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
+                    case "Heroe con Habilidades de combate avanzadas" ->
+                            heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
+                    case "Heroe con Velocidad sobrehumana" ->
+                            heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
+                    case "Heroe con Curación acelerada" ->
+                            heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
+                    case "Heroe con Fuerza sobrehumana" ->
+                            heroesFiltrados.add(new SuperHeroImpl(superHeroImpl.getName(), Collections.singletonList(clasificacion)));
+                    default -> heroesFiltrados.add(superHeroImpl);
                 }
             }
         }
-        LJMenuImpl.verHeroes(heroesFiltrados);
+        ljMenuImpl.mostrarHeroes(heroesFiltrados);
     }
 }

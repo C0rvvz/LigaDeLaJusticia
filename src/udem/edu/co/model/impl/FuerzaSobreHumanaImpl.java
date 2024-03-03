@@ -18,9 +18,9 @@ public class FuerzaSobreHumanaImpl implements FuerzaSobreHumana {
             }
         }
         if (heroeExistente != null) {
-            heroeExistente.getClasificaciones().add("Avenger Inteligente");
+            heroeExistente.getClasificaciones().add("Heroe con Fuerza sobrehumana");
         } else {
-            heroe.getClasificaciones().add("Avenger Inteligente");
+            heroe.getClasificaciones().add("Heroe con Fuerza sobrehumana");
             heroes.add(heroe);
         }
     }

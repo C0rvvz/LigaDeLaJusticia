@@ -7,11 +7,11 @@ import udem.edu.co.model.impl.SuperHeroImpl;
 public class LJMenuImpl implements LJMenu {
     private Scanner scanner;
 
-    public LJMenuImpl(Scanner scanner) {
+    public LJMenuImpl() {
         this.scanner = new Scanner(System.in);
     }
 
-    public int VerMenu() {
+    public int verMenu() {
         System.out.println("Super Heroes de la Liga De La Justicia");
         System.out.println("1) Todos los Heroes Disponibles");
         System.out.println("2) Heroes con Fuerza sobrehumana");
@@ -25,14 +25,14 @@ public class LJMenuImpl implements LJMenu {
         return scanner.nextInt();
     }
 
-    public void verHeroes(List<SuperHeroImpl> heroes) {
+    public void mostrarHeroes(List<SuperHeroImpl> heroes) {
         System.out.println("Heroes Disponibles");
         for (SuperHeroImpl heroe : heroes) {
             System.out.println(heroe.getName() + " =>> " + heroe.getClasificaciones());
         }
     }
 
-    public void verMensaje(String mensaje){
+    public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }
 }

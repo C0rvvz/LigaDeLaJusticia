@@ -25,4 +25,3 @@ public class VelocidadSobrehumanaImpl implements VelocidadSobrehumana {
         }
     }
 }
-}
